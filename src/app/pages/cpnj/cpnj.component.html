@@ -1,0 +1,9 @@
+<div>
+    <form class="cnpj-form">
+        <mat-form-field class="cnpj flex" appearance="fill">
+            <mat-label>CNPJ</mat-label>
+            <mat-icon matSuffix [ngClass]="validarCNPJ(cnpj.value) ? 'checked' : 'notChecked'">verified</mat-icon>
+            <input type="text" #cnpj matInput>
+        </mat-form-field>
+    </form>
+</div>

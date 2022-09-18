@@ -1,0 +1,23 @@
+.center {
+    display: flex;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+  }
+
+  .center-list {
+    display: flex;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+  }
+
+  mat-form-field.mat-form-field {
+    width: 100%;
+  }
+
+  .remove {
+    color:#d62626;
+  }

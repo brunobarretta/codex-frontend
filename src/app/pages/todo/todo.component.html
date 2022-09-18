@@ -1,0 +1,25 @@
+<div class="center">
+    <div>
+        <h1>Todo List</h1>
+        <form [formGroup]="newTodoForm" (ngSubmit)="addTask()">
+            <mat-form-field>
+                <mat-placeholder>Adicionar Tarefa</mat-placeholder>
+                <input matInput type="search" formControlName="todoItem">
+                <button type="submit" mat-button matSuffix mat-stroked-button>
+                    <mat-icon>add</mat-icon>
+                </button>
+            </mat-form-field>
+        </form>
+    </div>
+</div>
+
+<div class="center-list">
+    <mat-nav-list>
+        <mat-list-item *ngFor="let value of taskList, index as i">
+           <a matLine>{{ value.name }}</a>
+           <button mat-icon-button (click)="removeTask(i)">
+              <mat-icon class="remove">delete</mat-icon>
+           </button>
+        </mat-list-item>
+    </mat-nav-list>
+</div>
