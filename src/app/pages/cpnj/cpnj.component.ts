@@ -16,10 +16,12 @@ export class CpnjComponent implements OnInit {
   validarCNPJ(cnpj: any) {
     console.log(cnpj)
 
+    //Remove a formatação caso exista
     cnpj = cnpj.replace(/[^\d]+/g, '');
 
     if (cnpj == '') return false;
 
+    //confere se o input está com 14 digitos
     if (cnpj.length != 14)
       return false;
 
@@ -36,13 +38,14 @@ export class CpnjComponent implements OnInit {
       cnpj == "99999999999999")
       return false;
 
-    // Valida DVs
+    // Valida Digito verificador
     let tamanho = cnpj.length - 2
     console.log('tamanho',tamanho)
     let numeros = cnpj.substring(0, tamanho);
     console.log('numeros',numeros)
     let digitos = cnpj.substring(tamanho);
     console.log('digitos',digitos)
+
     let soma = 0;
     let pos = tamanho - 7;
     for (let i = tamanho; i >= 1; i--) {
